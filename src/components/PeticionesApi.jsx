@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export default function PeticionesApi() {
     const [cervezas, setCervezas] = useState([])
-    const [paginacion, setPaginacion] = useState(1)
+    const [pagina, setPagina] = useState(1)
 
     const obtenerCervezas = async (paginacion) => {
         try {
@@ -14,16 +14,16 @@ export default function PeticionesApi() {
         }
     }
     const siguiente = () => {
-        setPaginacion(() => {
-            obtenerCervezas(paginacion + 1)
-            return paginacion + 1
+        setPagina(() => {
+            obtenerCervezas(pagina + 1)
+            return pagina + 1
         })
 
     }
     const atras = () => {
-        setPaginacion(() => {
-            obtenerCervezas(paginacion - 1)
-            return paginacion - 1
+        setPagina(() => {
+            obtenerCervezas(pagina - 1)
+            return pagina - 1
         })
 
     }
@@ -34,7 +34,7 @@ export default function PeticionesApi() {
     return (
         <div>
             <h1>PETICIONES DE CERVEZAS</h1>
-            <button onClick={() => obtenerCervezas(paginacion)}>LISTA DE CERVEZAS</button>
+            <button onClick={() => obtenerCervezas(pagina)}>LISTA DE CERVEZAS</button>
             <button onClick={siguiente}>SIGUIENTE</button>
             <button onClick={atras}>ATRÁS</button>
             {
