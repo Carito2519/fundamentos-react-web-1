@@ -33,7 +33,7 @@ export default function PeticionesApi() {
 
     return (
         <div>
-            <h1>PETICIONES DE CERVEZA</h1>
+            <h1>PETICIONES DE CERVEZAS</h1>
             <button onClick={() => obtenerCervezas(paginacion)}>LISTA DE CERVEZAS</button>
             <button onClick={siguiente}>SIGUIENTE</button>
             <button onClick={atras}>ATRÁS</button>
